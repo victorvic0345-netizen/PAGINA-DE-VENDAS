@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rank Up Vault | Sua Mira no Próximo Nível</title>
+    
+    <!-- Otimizações de Carregamento -->
+    <link rel="preconnect" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fast.wistia.com">
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/etd8z5t7gh.js" async type="module"></script>
+    <script src="https://fast.wistia.com/embed/71xesvcnxv.js" async type="module"></script>
+    <script src="https://fast.wistia.com/embed/9nwhlskto8.js" async type="module"></script>
+    
+    <!-- Script de Prefetch para Carregamento Rápido -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var links = document.querySelectorAll("a");
+
+      links.forEach(function(link) {
+        link.addEventListener("mouseenter", prefetch);
+        link.addEventListener("touchstart", prefetch, {passive: true});
+      });
+
+      function prefetch(e) {
+        var url = e.target.href;
+        if (!url) return;
+
+        var linkTag = document.createElement("link");
+        linkTag.rel = "prefetch";
+        linkTag.href = url;
+        document.head.appendChild(linkTag);
+      }
+    });
+    </script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              orbitron: ['Orbitron', 'sans-serif'],
+              inter: ['Inter', 'sans-serif'],
+              rajdhani: ['Rajdhani', 'sans-serif'],
+            },
+            colors: {
+              ff: {
+                orange: '#ff5722',
+                orangeMed: '#ff9800',
+                gold: '#ffd700',
+                yellow: '#ffc107',
+                dark: '#000000',
+                darkSuave: '#0a0a0a',
+                greyDark: '#1a1a1a',
+                textDark: '#333333',
+                textMed: '#666666',
+                textLight: '#999999',
+                white: '#ffffff',
+                begeUltra: '#fff3e0',
+                begeClaro: '#ffe0b2',
+                success: '#4caf50',
+                error: '#f44336',
+              }
+            },
+            backgroundImage: {
+              'hero-grad': 'linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #ff5722 100%)',
+              'cta-box-grad': 'linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%)',
+              'cta-btn-grad': 'linear-gradient(135deg, #ff5722 0%, #ff9800 100%)',
+              'cta-strong-box-grad': 'linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #ff5722 100%)',
+              'cta-strong-btn-grad': 'linear-gradient(135deg, #ffd700 0%, #ff9800 50%, #ff5722 100%)',
+              'card-final-grad': 'linear-gradient(135deg, #ff5722 0%, #ff9800 100%)',
+            }
+          }
+        }
+      }
+    </script>
+
+    <script>
+      function updateScarcityBanner() {
+        var hoje = new Date();
+        var dia = String(hoje.getDate()).padStart(2, '0');
+        var mes = String(hoje.getMonth() + 1).padStart(2, '0');
+        var ano = hoje.getFullYear();
+        var dataHoje = dia + "/" + mes + "/" + ano;
+
+        // HTML com as cores da imagem: Desconto só HOJE (amarelo) nessa página DATA (amarelo)
+        var html = 'Desconto só <span style="color: #ffff00">HOJE</span> nessa página <span style="color: #ffff00">' + dataHoje + '</span>';
+
+        var elementos = document.querySelectorAll(".scarcity-banner-text");
+        elementos.forEach(function(el) {
+          if (el.innerHTML !== html) {
+            el.innerHTML = html;
+          }
+        });
+      }
+      // Intervalo curto para garantir que funcione após a montagem do React
+      setInterval(updateScarcityBanner, 500);
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: #999999;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        overflow-x: hidden;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      * {
+        font-family: 'Inter', sans-serif !important;
+      }
+      .glass-card {
+        background: rgba(26, 26, 26, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      @keyframes pulse-glow {
+        0%, 100% { transform: scale(1); filter: brightness(1); }
+        50% { transform: scale(1.02); filter: brightness(1.2); }
+      }
+      .animate-pulse-glow {
+        animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      .slanted-tr {
+        clip-path: polygon(0 0, 96% 0, 100% 8%, 100% 100%, 4% 100%, 0 92%);
+      }
+      wistia-player { display: block; width: 100%; }
+      wistia-player[media-id='etd8z5t7gh']:not(:defined) { 
+        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/etd8z5t7gh/swatch'); 
+        padding-top:56.25%; 
+      }
+      wistia-player[media-id='71xesvcnxv']:not(:defined) { 
+        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/71xesvcnxv/swatch'); 
+        padding-top:177.78%; 
+      }
+      wistia-player[media-id='9nwhlskto8']:not(:defined) {
+        display: none;
+      }
+    </style>
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="index.tsx"></script>
+  </body>
+</html>
